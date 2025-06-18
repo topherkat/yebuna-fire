@@ -1,0 +1,28 @@
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar.dark-mode,
+.footer.dark-mode {
+    background-color: #1f1f1f !important;
+}
+
+.bg-light.dark-mode {
+    background-color: #121212 !important;
+}
+
+.card.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Optional: smooth transitions for better experience */
+body, .navbar, .footer, .card {
+    transition: background-color 0.3s, color 0.3s;
+}

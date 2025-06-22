@@ -9,7 +9,9 @@
 
     <style>
     * { font-family: "Montserrat", sans-serif; }
+
     body { background-color: #121212; color: #ffffff; }
+
     .navbar {
         background-color: rgba(0, 0, 0, 0.7) !important;
         backdrop-filter: blur(2px);
@@ -17,43 +19,15 @@
         border-bottom: 1px solid white;
     }
 
-
+    .navbar #logo{
+        width: 30px;
+    }
     .bg-light { background-color: #2c2c2c !important; }
     .card { background-color: #333333; color: #ffffff; }
 
-    #home {
-        position: relative;
-        background: url('./images/coffee-bean-ai2.png') no-repeat center center/cover;
-        color: #ffffff;
-        overflow: hidden;
-    }
+    /* Full width background */
+    
 
-    /* Overlay */
-    #home::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-    }
-
-    /* Zoom animation */
-    #home::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: url('./images/coffee-bean-ai2.png') no-repeat center center/cover;
-        transform: scale(1);
-        animation: zoom 30s infinite alternate ease-in-out;
-        z-index: 0;
-    }
-
-    @keyframes zoom {
-        0% { transform: scale(1); }
-        100% { transform: scale(1.05); }
-    }
-
-    /* Canvas for particles */
     #particles-js {
         position: absolute;
         width: 100%;
@@ -63,34 +37,82 @@
         left: 0;
     }
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
+
+    @keyframes zoom {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.05); }
     }
 
 
 
+    /* small */
     @media (max-width: 767.98px) {
-        .hero-content { min-height: 30vh; text-align: left; padding-top: 90px; }
-        .hero-content h1, p { text-shadow: 2px 2px black; }
-    }
-    @media (min-width: 768px) {
-        .hero-content {
-            min-height: 100vh; text-align: left; max-width: 600px;
-            margin-left: 50px; padding-top: 240px;
+        #home {
+            position: relative;
+            min-height: 50vh;
+            width: 100%;
+            background: url('./images/coffee-bean-ai2.png') no-repeat center center / cover;https://github.com/topherkat/yebuna-fire/blob/master/index.html
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 50px;
+            padding-top: 20px;
         }
-        .hero-content h1 { text-shadow: 4px 4px black; }
-        .hero-content p { text-shadow: 2px 2px black; }
-        .hero-content a { box-shadow: 5px 10px rgba(0,0,0,0.5); }
+
+
+        #home h1, p { text-shadow: 2px 2px black; }
+
+        #about{
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #about #about-img{
+           box-shadow: 0px 10px rgba(0,0,0,0.5);
+           width: 90%;
+        }
     }
+
+    /* md up */
+    @media (min-width: 768px) {
+        #home {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background: url('./images/coffee-bean-ai2.png') no-repeat center center / cover;https://github.com/topherkat/yebuna-fire/blob/master/index.html
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 50px;
+        }
+
+        #home h1 { text-shadow: 4px 4px black; }
+        #home p { text-shadow: 2px 2px black; }
+        #home a { box-shadow: 5px 10px rgba(0,0,0,0.5); }
+
+        #about{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        #about #about-img{
+           box-shadow: 0px 10px rgba(0,0,0,0.5);
+        }
+    }
+
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Yebuna Fire</a>
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#"><img id="logo" src="./images/logo.jpg" class="rounded-circle"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -106,9 +128,9 @@
 </nav>
 
 <!-- Landing -->
-<section id="home" class="hero ps-5">
+<section id="home" class="hero">
     <div id="particles-js"></div>
-    <div class="hero-content ps-md-5">
+    <div class="hero-content">
         <h1>Yebuna Fire</h1>
         <p>Insert Tagline - Raine</p>
         <a href="#products" class="btn btn-success">Explore Products</a>
@@ -118,8 +140,19 @@
 <!-- About Us -->
 <section id="about" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4">About Us</h2>
-        <p class="lead text-center">We are a company committed to providing the best services and products to our customers.</p>
+
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="./images/about.jpg" class="img-fluid" id="about-img">
+            </div>
+
+            <div class="about-details col-md-6 mt-5 mt-md-0">
+               <h2 class="text-center mb-4">About Us</h2>
+               <p class="lead text-center">We are a company committed to providing the best services and products to our customers.</p> 
+            </div>
+        </div>
+        
+        
     </div>
 </section>
 
@@ -183,7 +216,7 @@ tsParticles.load("particles-js", {
     number: { value: 40 },
     color: { value: "#ffffff" },
     shape: { type: "circle" },
-    opacity: { value: 0.2 },  // subtle transparency
+    opacity: { value: 0.2 },
     size: { value: 4, random: { enable: true, minimumValue: 1 } },
     move: { enable: true, speed: 0.3, direction: "none", random: false, straight: false, outModes: "out" }
   },
@@ -192,7 +225,6 @@ tsParticles.load("particles-js", {
   }
 });
 </script>
-
 
 </body>
 </html>
